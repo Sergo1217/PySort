@@ -1,7 +1,8 @@
 import os
+from inspect import getsourcefile
 
 #comfig
-dirname = 'D:\pysort'
+dirname = os.path.dirname(getsourcefile(lambda:0))
 config_dirs = ['Archives','Torrents','Videos','Pictures','Documents']
 
 config_archives = ['.rar','.7z','.zip']
@@ -33,5 +34,4 @@ for j in config_formats:
             rez = i.find(k)
             if k == os.path.splitext(i)[1]:
                 print(os.path.join(dirname, folder, i))
-                print(os.path.splitext(i)[1])
                 #os.replace(os.path.join(dirname, i), os.path.join(dirname, folder, i))
